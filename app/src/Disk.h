@@ -58,8 +58,8 @@ public:
         bool isDirectory;     ///< flag if the i-node is a directory
         bool isSymbolicLink;  ///< flag if the i-node is a symbolic link
         int32_t size;         ///< total size of the i-node
-        int32_t direct[NUM_OF_DIRECT_POINTERS];       ///< direct pointers to the clusters making up the file/folder
-        int32_t indirect[NUM_OF_INDIRECT_POINTERS];   ///< indirect pointers to the clusters making up the file/folder
+        int32_t direct[NUM_OF_DIRECT_POINTERS];     ///< direct pointers to the clusters making up the file/folder
+        int32_t indirect[NUM_OF_INDIRECT_POINTERS]; ///< indirect pointers to the clusters making up the file/folder
     };
 
     /// DirectoryItem structure holding information
@@ -161,7 +161,6 @@ public:
     /// \return the target i-node from the path
     INode_t *getINodeFromPath(std::string path);
 
-
     /// Removes a file from the file system. 
     /// 
     /// This method deletes the file (i-node) given as a parameter.
@@ -175,16 +174,73 @@ public:
     /// \param folderName name of the folder that is going to be created
     void addNewFolder(INode_t *destinationINode, std::string folderName);
 
-    
+    /// Creates a new folder in the current directory with a name given as a parameter
+    ///
+    /// \param folderName name of the folder that is going to be created
     void addNewFolder(std::string folderName);
+
+    /// Removes a directory (i-node) given as a parameter
+    ///
+    /// \param iNode i-node of the target folder that is going to be deleted
     void removeDirectory(INode_t *iNode);
+
+    /// Changes the current location (path)
+    ///
+    /// \param path new current location
     void cd(std::string path);
+
+    /// Prints out the content of the current directory.
     void printCurrentDirectoryItems();
+
+    /// Prints out directory items (content of a directory) given as a parameter
+    ///
+    /// \param directoryItems directory items that are going to be printed out
     void printDirectoryItems(const DirectoryItems_t *directoryItems);
+
+    /// Returns directory items from the i-node given as a parameter
+    ///
+    /// This method is used when modidying its content
+    /// - adding/deleting files/folders, renaming them, etc.
+    ///
+    /// \param iNode i-node of the folder containing the items we want to get
+    /// \return directory items of the folder (i-node) given as a parameter.
     DirectoryItems_t *getDirectoryItemsFromINode(INode_t *iNode);
+
+    /// Returns the current path as a string
+    ///
+    /// The format of the path is absolute, meaning it goes all the way down
+    /// from the root directory down to the target (current) directory
+    ///
+    /// \return current location as an absolute path
     std::string getCurrentPath();
+
+    /// Prints out the content of the file given as a parameter.
+    ///
+    /// As there might be symbolic links in the file system as well, we 
+    /// need to specify if we want to print out the name of a symbolic link
+    /// in a specific format (e.g. myLink -> /Doc/data.pdf) or the contnet 
+    /// of the file the symbolic link points at. To tackle this, there is
+    /// another parameter used to distingush these two approaches. An example
+    /// when we want to print out only the "name" of a symbolic link is
+    /// when printing out a content of a directory (#printDirectoryItems).
+    /// The other case might be when we want to print out the file content using
+    /// command cat.
+    ///
+    /// \param iNode iNode of the file we want to print out
+    /// \param includeSlinks true/false whether we want to print out symbolic links as well.
     void printFileContent(INode_t *iNode, bool includeSlinks);
+
+    /// Imports the file given as a paramter into the virtual file system
+    ///
+    /// This method reads the content of the file block by block, stores it into
+    /// clusters, and attaches the clusters to an i-node holding all the information
+    /// about the file. 
+    ///
+    /// \param destinationINode i-node of the folder we are importing the file into within the file system
+    /// \param sourceFile the file descriptior of the source file located on the HDD
+    /// \param fileName the name of the file in the virtual file system
     void incpyFile(INode_t *destinationINode, FILE *sourceFile, std::string fileName);
+
     void outcpyFile(INode_t *sourceINode, FILE *destinationFile);
     void copyFileToADifferentDirectory(INode_t *fileINode, INode_t *destinationINode, std::string fileName);
     void moveFileToADifferentDir(INode_t *fileINode, INode_t *destinationINode, std::string fileName);
