@@ -442,10 +442,44 @@ private:
     /// clusters in the file system
     bool addDirectClustersToINode(INode_t *iNode);
 
+    /// Finds out if there is at least n free clusters in te file system
+    ///
+    /// This method is used when importing a file into the file system
+    /// as well as copying a file within the system.
+    ///
+    /// \param n number of cluster we requite to be store a file/folder
+    /// \return true, if there is at least n clusters free. Otherwise, false.
     bool isThereAtLeastNFreeClusters(int32_t n);
+
+    /// Finds out whether or not there is a file/folder in the directory given as a parameter with particular the name
+    ///
+    /// \param directoryItems directory items
+    /// \param name name that we want to find out whether or not is already in the folder
+    /// \return true, if the name exists withing the folder. Otherwise, false.
     bool existsInDirectory(DirectoryItems_t *directoryItems, std::string name);
+
+    /// Adds the i-node given as a parameter to the particulat directory
+    ///
+    /// This method is used when adding a new file/folder into the directory
+    /// given as a parameter. 
+    ///
+    /// \param directoryItems directory items of the target directory
+    /// \param directoryINode i-node of the target directory
+    /// \param newINode i-node (file/folder) we are going to add into the directory
+    /// \param name of the (file/folder) we are going to add into the directory
     void addINodeToDirectory(DirectoryItems_t *directoryItems, INode_t *directoryINode, INode_t *newINode, std::string name);
+
+    /// Returns all the clusters of the i-node given as a parameter
+    ///
+    /// This method is used when printing out/exporting a file
+    /// located in the virtual file system. It returns all the clusters that the
+    /// content of the file is stored in.
+    ///
+    /// \param iNode i-node of the file we want to get all clusters of
+    /// \return a vector of all the clusters of the i-node
     std::vector<std::int32_t> getAllClustersOfINode(INode_t *iNode);
+
+    ///
     bool attachClustersToINode(INode_t *iNode, std::vector<int32_t> clusters);
     void removeINodeFromParent(INode_t *iNode);
 
