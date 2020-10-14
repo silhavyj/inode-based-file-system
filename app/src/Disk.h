@@ -290,16 +290,51 @@ public:
     void createSymbolicLink(INode_t *fileINode, std::string slinkName);
 
 private:
+    /// Creates a new file system
+    ///
+    /// It creates sequentially all data structures representing
+    /// the file system as a whole - superblock, bitmap, inodes, and so on. 
+    ///
+    /// \param diskSize size of the storage (file) in bytes
     void initNewFileSystem(size_t diskSize);
+
+    /// Initializes a new superblock of the file system
+    ///
+    /// \param diskSize size of the storage (file) in bytes
     void initNewSuperBlock(size_t diskSize);
+
+    /// Re-initializes all i-nodes in the file system
     void initINodes();
+
+    /// Re-initializes the bitmap of the file system
     void initBitmap();
 
+    /// Saves the whole file system on the disk
+    ///
+    /// This method is called when the user formats the file system
+    /// because all the data structure need to be stored at the same time.
     void saveFileSystemOnDisk();
+
+    /// Stores the superblock in the file (storage)
     void saveSuperblokOnDisk();
+
+    /// Stores the bitmap in the file (storage)
     void saveBitmapOnDisk();
+
+     /// Stores the i-nodes in the file (storage)
     void saveINodesOnDisk();
+
+    /// Stores the root directory on the disk.
+    /// 
+    /// This part is really crucial as the file system
+    /// need to know where to look for the entry point
+    /// the whole hierarchy
     void saveRootDirectoryOnDisk();
+
+    /// Stores a directory (directory items) on the disk
+    ///
+    /// \param iNode i-node of the directory
+    /// \param directoryItems directory items (content) themeselves
     void saveDirectoryItemsOnDisk(INode_t *iNode, DirectoryItems_t *directoryItems);
 
     void loadFileSystemFromDisk();

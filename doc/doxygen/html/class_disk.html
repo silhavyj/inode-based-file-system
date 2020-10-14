@@ -179,14 +179,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aeffad4257ca5f494af22b307368733f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imports the file given as a paramter into the virtual file system.  <a href="class_disk.html#aeffad4257ca5f494af22b307368733f1">More...</a><br /></td></tr>
 <tr class="separator:aeffad4257ca5f494af22b307368733f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57005350292699849190d25b4b1af267"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a57005350292699849190d25b4b1af267">outcpyFile</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *sourceINode, FILE *destinationFile)</td></tr>
+<tr class="memdesc:a57005350292699849190d25b4b1af267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exports the file given as a paramter (i-node) from the virtual file system onto the HDD.  <a href="class_disk.html#a57005350292699849190d25b4b1af267">More...</a><br /></td></tr>
 <tr class="separator:a57005350292699849190d25b4b1af267"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4dffd3f910bc2b38261f0f2577ca4b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#ae4dffd3f910bc2b38261f0f2577ca4b7">copyFileToADifferentDirectory</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *fileINode, <a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *destinationINode, std::string fileName)</td></tr>
+<tr class="memdesc:ae4dffd3f910bc2b38261f0f2577ca4b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the file give as a parameter (i-node) to a different directory.  <a href="class_disk.html#ae4dffd3f910bc2b38261f0f2577ca4b7">More...</a><br /></td></tr>
 <tr class="separator:ae4dffd3f910bc2b38261f0f2577ca4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e42af0a5d03d3c493716a8c9f2d1e0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a6e42af0a5d03d3c493716a8c9f2d1e0d">moveFileToADifferentDir</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *fileINode, <a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *destinationINode, std::string fileName)</td></tr>
+<tr class="memdesc:a6e42af0a5d03d3c493716a8c9f2d1e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the file given as a parameter to a different directory.  <a href="class_disk.html#a6e42af0a5d03d3c493716a8c9f2d1e0d">More...</a><br /></td></tr>
 <tr class="separator:a6e42af0a5d03d3c493716a8c9f2d1e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a04c93232f44a0c3a7ce32d5b23c4c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a0a04c93232f44a0c3a7ce32d5b23c4c9">printInfoAboutINode</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *iNode)</td></tr>
+<tr class="memdesc:a0a04c93232f44a0c3a7ce32d5b23c4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints out all information about the i-node given as a parameter.  <a href="class_disk.html#a0a04c93232f44a0c3a7ce32d5b23c4c9">More...</a><br /></td></tr>
 <tr class="separator:a0a04c93232f44a0c3a7ce32d5b23c4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8aa5fe692b0a25b8748063d047d40ede"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a8aa5fe692b0a25b8748063d047d40ede">createSymbolicLink</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *fileINode, std::string slinkName)</td></tr>
+<tr class="memdesc:a8aa5fe692b0a25b8748063d047d40ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a symbolic link pointing at the file given as a parameter.  <a href="class_disk.html#a8aa5fe692b0a25b8748063d047d40ede">More...</a><br /></td></tr>
 <tr class="separator:a8aa5fe692b0a25b8748063d047d40ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -213,24 +218,34 @@ Static Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a4858b7ea90d4a9bfa2ecf8198d824e7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a4858b7ea90d4a9bfa2ecf8198d824e7e">initNewFileSystem</a> (size_t diskSize)</td></tr>
+<tr class="memdesc:a4858b7ea90d4a9bfa2ecf8198d824e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new file system.  <a href="class_disk.html#a4858b7ea90d4a9bfa2ecf8198d824e7e">More...</a><br /></td></tr>
 <tr class="separator:a4858b7ea90d4a9bfa2ecf8198d824e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb85ff24271bf70b4059438fc834d314"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#acb85ff24271bf70b4059438fc834d314">initNewSuperBlock</a> (size_t diskSize)</td></tr>
+<tr class="memdesc:acb85ff24271bf70b4059438fc834d314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new superblock of the file system.  <a href="class_disk.html#acb85ff24271bf70b4059438fc834d314">More...</a><br /></td></tr>
 <tr class="separator:acb85ff24271bf70b4059438fc834d314"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57b88ce179cffa4b91537fcdd7b642e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a57b88ce179cffa4b91537fcdd7b642e2">initINodes</a> ()</td></tr>
+<tr class="memdesc:a57b88ce179cffa4b91537fcdd7b642e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-initializes all i-nodes in the file system.  <a href="class_disk.html#a57b88ce179cffa4b91537fcdd7b642e2">More...</a><br /></td></tr>
 <tr class="separator:a57b88ce179cffa4b91537fcdd7b642e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afce4433f799ce7b37d044b5176c39abd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#afce4433f799ce7b37d044b5176c39abd">initBitmap</a> ()</td></tr>
+<tr class="memdesc:afce4433f799ce7b37d044b5176c39abd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-initializes the bitmap of the file system.  <a href="class_disk.html#afce4433f799ce7b37d044b5176c39abd">More...</a><br /></td></tr>
 <tr class="separator:afce4433f799ce7b37d044b5176c39abd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09a896a5f22291c2c5a232942426f45c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a09a896a5f22291c2c5a232942426f45c">saveFileSystemOnDisk</a> ()</td></tr>
+<tr class="memdesc:a09a896a5f22291c2c5a232942426f45c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves the whole file system on the disk.  <a href="class_disk.html#a09a896a5f22291c2c5a232942426f45c">More...</a><br /></td></tr>
 <tr class="separator:a09a896a5f22291c2c5a232942426f45c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18f079ad0b5c6571d348d2801c3a8c3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a18f079ad0b5c6571d348d2801c3a8c3f">saveSuperblokOnDisk</a> ()</td></tr>
+<tr class="memdesc:a18f079ad0b5c6571d348d2801c3a8c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the superblock in the file (storage)  <a href="class_disk.html#a18f079ad0b5c6571d348d2801c3a8c3f">More...</a><br /></td></tr>
 <tr class="separator:a18f079ad0b5c6571d348d2801c3a8c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7359088824a8ae30be14c213b318c544"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a7359088824a8ae30be14c213b318c544">saveBitmapOnDisk</a> ()</td></tr>
+<tr class="memdesc:a7359088824a8ae30be14c213b318c544"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the bitmap in the file (storage)  <a href="class_disk.html#a7359088824a8ae30be14c213b318c544">More...</a><br /></td></tr>
 <tr class="separator:a7359088824a8ae30be14c213b318c544"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46c38f0cf61811e1e9d84cd404cc2449"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a46c38f0cf61811e1e9d84cd404cc2449">saveINodesOnDisk</a> ()</td></tr>
+<tr class="memdesc:a46c38f0cf61811e1e9d84cd404cc2449"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the i-nodes in the file (storage)  <a href="class_disk.html#a46c38f0cf61811e1e9d84cd404cc2449">More...</a><br /></td></tr>
 <tr class="separator:a46c38f0cf61811e1e9d84cd404cc2449"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a224255783622e4d36544e73c2eaa3e72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a224255783622e4d36544e73c2eaa3e72">saveRootDirectoryOnDisk</a> ()</td></tr>
+<tr class="memdesc:a224255783622e4d36544e73c2eaa3e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the root directory on the disk.  <a href="class_disk.html#a224255783622e4d36544e73c2eaa3e72">More...</a><br /></td></tr>
 <tr class="separator:a224255783622e4d36544e73c2eaa3e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51fb150a7d7251913b2e69e6c0fdd6da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a51fb150a7d7251913b2e69e6c0fdd6da">saveDirectoryItemsOnDisk</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *iNode, <a class="el" href="struct_disk_1_1_directory_items__t.html">DirectoryItems_t</a> *directoryItems)</td></tr>
+<tr class="memdesc:a51fb150a7d7251913b2e69e6c0fdd6da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a directory (directory items) on the disk.  <a href="class_disk.html#a51fb150a7d7251913b2e69e6c0fdd6da">More...</a><br /></td></tr>
 <tr class="separator:a51fb150a7d7251913b2e69e6c0fdd6da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c78a899b5d9e54399d498e2aacdcaa0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a7c78a899b5d9e54399d498e2aacdcaa0">loadFileSystemFromDisk</a> ()</td></tr>
 <tr class="separator:a7c78a899b5d9e54399d498e2aacdcaa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -623,6 +638,17 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Copies the file give as a parameter (i-node) to a different directory. </p>
+<p>It does not have to be necessary a different directory if the name if the file differs. If the user tries to copy the file into the same directory with the same name as the original file, an error message will be thrown.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileINode</td><td>i-node of the source file (that is going to be copied) </td></tr>
+    <tr><td class="paramname">destinationINode</td><td>i-node of the destination directory </td></tr>
+    <tr><td class="paramname">fileName</td><td>name of copied copied file </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a8aa5fe692b0a25b8748063d047d40ede"></a>
@@ -650,6 +676,16 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates a symbolic link pointing at the file given as a parameter. </p>
+<p>The symbolic link is another i-node holding a path the the original file and is treated accordingly. For example, if the user runs command cat, it will print out the content of the original file. The same approach is used when exporting the file onto the HDD.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileINode</td><td>i-node of the source file we want to create a symbolic link to </td></tr>
+    <tr><td class="paramname">slinkName</td><td>name of the symbolic link that is being created </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1085,6 +1121,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Re-initializes the bitmap of the file system. </p>
+
 </div>
 </div>
 <a id="affcca6939a3081c8541e5d810ee0702b"></a>
@@ -1135,6 +1173,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Re-initializes all i-nodes in the file system. </p>
+
 </div>
 </div>
 <a id="a4858b7ea90d4a9bfa2ecf8198d824e7e"></a>
@@ -1161,6 +1201,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Creates a new file system. </p>
+<p>It creates sequentially all data structures representing the file system as a whole - superblock, bitmap, inodes, and so on.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">diskSize</td><td>size of the storage (file) in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="acb85ff24271bf70b4059438fc834d314"></a>
@@ -1186,6 +1235,14 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initializes a new superblock of the file system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">diskSize</td><td>size of the storage (file) in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1347,6 +1404,17 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Moves the file given as a parameter to a different directory. </p>
+<p>This method can be also used for renaming files within the same directory.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileINode</td><td>i-node of the source file (that is going to be moved) </td></tr>
+    <tr><td class="paramname">destinationINode</td><td>i-node of the destination directory the file is being moved into </td></tr>
+    <tr><td class="paramname">fileName</td><td>name of the moved file </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a8870e4d73487058cfea23871edec0770"></a>
@@ -1431,6 +1499,16 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Exports the file given as a paramter (i-node) from the virtual file system onto the HDD. </p>
+<p>First, it collects all the clusters the file content is stored in and then, it will copy the content out into the destination file on the HDD.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sourceINode</td><td>i-node of the source file within the file system </td></tr>
+    <tr><td class="paramname">destinationFile</td><td>the file desctiptor of the destination file on the HDD </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1608,6 +1686,15 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prints out all information about the i-node given as a parameter. </p>
+<p>It prints out all the information such as id, parent's id, number of clusters the i-node hold pointer to, size, whether it's a directory or a file, and so on.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iNode</td><td>i-node we want to print out info about </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1824,6 +1911,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Stores the bitmap in the file (storage) </p>
+
 </div>
 </div>
 <a id="a51fb150a7d7251913b2e69e6c0fdd6da"></a>
@@ -1860,6 +1949,15 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Stores a directory (directory items) on the disk. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iNode</td><td>i-node of the directory </td></tr>
+    <tr><td class="paramname">directoryItems</td><td>directory items (content) themeselves </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a09a896a5f22291c2c5a232942426f45c"></a>
@@ -1884,6 +1982,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Saves the whole file system on the disk. </p>
+<p>This method is called when the user formats the file system because all the data structure need to be stored at the same time. </p>
 
 </div>
 </div>
@@ -1910,6 +2011,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Stores the i-nodes in the file (storage) </p>
+
 </div>
 </div>
 <a id="a224255783622e4d36544e73c2eaa3e72"></a>
@@ -1935,6 +2038,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Stores the root directory on the disk. </p>
+<p>This part is really crucial as the file system need to know where to look for the entry point the whole hierarchy </p>
+
 </div>
 </div>
 <a id="a18f079ad0b5c6571d348d2801c3a8c3f"></a>
@@ -1959,6 +2065,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Stores the superblock in the file (storage) </p>
 
 </div>
 </div>
