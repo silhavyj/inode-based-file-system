@@ -316,6 +316,8 @@ int32_t Disk::dataOffset(int32_t index) const {
 }
 
 int32_t Disk::getNumberOfClustersNeeded(int32_t size) const {
+    if (size == 0)
+        return 0;
     if (size < superBlock->clusterSize)
         return 1;
     int32_t numberOfClusters = size / superBlock->clusterSize;

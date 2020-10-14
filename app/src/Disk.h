@@ -331,26 +331,82 @@ private:
     /// the whole hierarchy
     void saveRootDirectoryOnDisk();
 
-    /// Stores a directory (directory items) on the disk
+    /// Stores directory (directory items) on the disk
     ///
     /// \param iNode i-node of the directory
     /// \param directoryItems directory items (content) themeselves
     void saveDirectoryItemsOnDisk(INode_t *iNode, DirectoryItems_t *directoryItems);
 
+    /// Loads the whole system from the disk
+    ///
+    /// This method is called when the program starts.
     void loadFileSystemFromDisk();
+
+    /// Loads the superblock from the disk
     void loadSuperBlockFromDisk();
+
+    /// Loads the bitmap from the disk
     void loadBitmapFromDisk();
+
+    /// Loads all the i-nodes from the disk
     void loadINodesFromDisk();
 
+    /// Prints out the whole file system.
+    ///
+    /// It prints out the superblock as well as the bitmap
+    /// and the inodes. This method is not currently used
+    /// anywhere whithin the project since its output is
+    /// quite big but it could be used if the user wants to
+    /// see what the file system looks like
     void printFileSystem();
+
+    /// Prints out the superblock of the file system
     void printSuperblock() const;
+
+    /// Prints out the bitmap of the file system
     void printBitmap() const;
+
+    /// Prints out all the i-nodes of the file system
     void printINodes() const;
+
+    /// Prints out an i-node in (all the information about it)
+    ///
+    /// \param iNode i-node that is going to be printed out
     void printINode(const INode_t *iNode) const;
+
+    /// Prints out a directory item (file/folder)
+    ///
+    /// \param directoryItem directory item that is going to be printed out
     void printDirectoryItem(const DirectoryItem_t *directoryItem);
 
+    /// Returns the number of clusters based on the size give as a parameter
+    ///
+    /// If the size is greater than zero, the n number of clusters needed is
+    /// at least one. Otherwise it returns the precise number of cluster that
+    /// is needed to store the file/folder based on the size of one cluster.
+    ///
+    /// \param size of the file/folder we want to store into clusters
+    /// \return number of clusters needed to store the file/folder
     inline int32_t getNumberOfClustersNeeded(int32_t size) const;
+
+    /// Returns the date offset based on the index given as a parameter
+    ///
+    /// The date offset is calculated as the start address of clusters
+    /// (data) + index * size of one cluster. This method helps you not 
+    /// to use the same long expression over and over again.
+    ///
+    /// \param index index of the cluster we want to move to within the file (storage)
+    /// \return the start address of the cluster we want to move to
     inline int32_t dataOffset(int32_t index) const;
+
+    /// Splits up the string given as a parameter by the separator character
+    ///
+    /// This method is used to split a string into individual tokens when
+    /// analyzing a path to a target file/folder ('/data/doc.png').
+    ///
+    /// \param str string we want to split up
+    /// \param separator character by which we want to split the string up
+    /// \return a vector of split up tokens
     std::vector<std::string> split(const std::string& str, char separator);
 
     INode_t *getFreeINode();
