@@ -479,8 +479,19 @@ private:
     /// \return a vector of all the clusters of the i-node
     std::vector<std::int32_t> getAllClustersOfINode(INode_t *iNode);
 
+    /// Attach clusters containing a content of a file to the i-node given as a parameter
     ///
+    /// \param iNode i-node we want to attach the clusters to
+    /// \param clusters all the clusters we want  to attach to the i-node
+    /// \return false, if there is not enough free clusters in the file system. Otherwise, true. 
     bool attachClustersToINode(INode_t *iNode, std::vector<int32_t> clusters);
+
+    /// Removes the i-node given as a parameter from its parent.
+    ///
+    /// It means that the i-node will be removed from the directory
+    /// that it is located in.
+    ///
+    /// \param iNode i-node that is going to be removed from the parent directory
     void removeINodeFromParent(INode_t *iNode);
 
     /// Removes the i-node given as a parameter from the file system.
@@ -492,8 +503,30 @@ private:
     /// \param iNode that is going to be deleted
     void removeINode(INode_t *iNode);
     
+    /// Returns an i-node from the path given as a parameter
+    ///
+    /// The user can type either a relative or absolute path
+    /// leading to the target i-node.
+    ///
+    /// \param iNode current location (directory)
+    /// \param path the user typed down as they want to get to the targer file/folder
+    /// \param relative whether it is a relative or absolute path
+    /// \return target i-node if found. Otherwise, NULL.
     INode_t *getINodeFromPath(INode_t *iNode, std::string path, bool relative);
+
+    /// Returns an absolute path of the i-node given as a parameter
+    ///
+    /// This path always starts from the root directory. Therefore,
+    /// the format looks like '/Data/Monday/'.
+    ///
+    /// \param iNode i-node which we went to know an absolute path of
+    /// \return an absolute path of the i-node given as a parameter
     std::string getPath(INode_t *iNode);
+
+    /// Returns the content of the slink given as a parameter (path to the file the slink points at)
+    ///
+    /// \param iNode symbolic link to a file
+    /// \return the content of the symbolic like (an absolute path to a file)
     std::string getPathFromSLink(INode_t *iNode);
 };
 

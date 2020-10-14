@@ -299,25 +299,34 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a29982df2324fa6cec330119943beb514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignes direct clusters to an i-node.  <a href="class_disk.html#a29982df2324fa6cec330119943beb514">More...</a><br /></td></tr>
 <tr class="separator:a29982df2324fa6cec330119943beb514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28e026829b8f2bec515f2f738719382c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a28e026829b8f2bec515f2f738719382c">isThereAtLeastNFreeClusters</a> (int32_t n)</td></tr>
+<tr class="memdesc:a28e026829b8f2bec515f2f738719382c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds out if there is at least n free clusters in te file system.  <a href="class_disk.html#a28e026829b8f2bec515f2f738719382c">More...</a><br /></td></tr>
 <tr class="separator:a28e026829b8f2bec515f2f738719382c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30f5cddddda677e38aa86078316c5788"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a30f5cddddda677e38aa86078316c5788">existsInDirectory</a> (<a class="el" href="struct_disk_1_1_directory_items__t.html">DirectoryItems_t</a> *directoryItems, std::string name)</td></tr>
+<tr class="memdesc:a30f5cddddda677e38aa86078316c5788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds out whether or not there is a file/folder in the directory given as a parameter with particular the name.  <a href="class_disk.html#a30f5cddddda677e38aa86078316c5788">More...</a><br /></td></tr>
 <tr class="separator:a30f5cddddda677e38aa86078316c5788"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae78128e52d68914a70feb2a612eb3b8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#ae78128e52d68914a70feb2a612eb3b8d">addINodeToDirectory</a> (<a class="el" href="struct_disk_1_1_directory_items__t.html">DirectoryItems_t</a> *directoryItems, <a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *directoryINode, <a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *newINode, std::string name)</td></tr>
+<tr class="memdesc:ae78128e52d68914a70feb2a612eb3b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the i-node given as a parameter to the particulat directory.  <a href="class_disk.html#ae78128e52d68914a70feb2a612eb3b8d">More...</a><br /></td></tr>
 <tr class="separator:ae78128e52d68914a70feb2a612eb3b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a333c576457eee232034b55665e8604ca"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::int32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a333c576457eee232034b55665e8604ca">getAllClustersOfINode</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *iNode)</td></tr>
+<tr class="memdesc:a333c576457eee232034b55665e8604ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all the clusters of the i-node given as a parameter.  <a href="class_disk.html#a333c576457eee232034b55665e8604ca">More...</a><br /></td></tr>
 <tr class="separator:a333c576457eee232034b55665e8604ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae080c7f45204e9bc644eb42333b792af"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#ae080c7f45204e9bc644eb42333b792af">attachClustersToINode</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *iNode, std::vector&lt; int32_t &gt; clusters)</td></tr>
+<tr class="memdesc:ae080c7f45204e9bc644eb42333b792af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attach clusters containing a content of a file to the i-node given as a parameter.  <a href="class_disk.html#ae080c7f45204e9bc644eb42333b792af">More...</a><br /></td></tr>
 <tr class="separator:ae080c7f45204e9bc644eb42333b792af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3f7f9aba690d8f42c14d0f0b91ff39d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#aa3f7f9aba690d8f42c14d0f0b91ff39d">removeINodeFromParent</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *iNode)</td></tr>
+<tr class="memdesc:aa3f7f9aba690d8f42c14d0f0b91ff39d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the i-node given as a parameter from its parent.  <a href="class_disk.html#aa3f7f9aba690d8f42c14d0f0b91ff39d">More...</a><br /></td></tr>
 <tr class="separator:aa3f7f9aba690d8f42c14d0f0b91ff39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6939b5e24ee53ce4fc9dcd1044f11283"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a6939b5e24ee53ce4fc9dcd1044f11283">removeINode</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *iNode)</td></tr>
 <tr class="memdesc:a6939b5e24ee53ce4fc9dcd1044f11283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the i-node given as a parameter from the file system.  <a href="class_disk.html#a6939b5e24ee53ce4fc9dcd1044f11283">More...</a><br /></td></tr>
 <tr class="separator:a6939b5e24ee53ce4fc9dcd1044f11283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38d5b4d8ffbf870d73beea6d3f9c432d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a38d5b4d8ffbf870d73beea6d3f9c432d">getINodeFromPath</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *iNode, std::string path, bool relative)</td></tr>
+<tr class="memdesc:a38d5b4d8ffbf870d73beea6d3f9c432d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an i-node from the path given as a parameter.  <a href="class_disk.html#a38d5b4d8ffbf870d73beea6d3f9c432d">More...</a><br /></td></tr>
 <tr class="separator:a38d5b4d8ffbf870d73beea6d3f9c432d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fb6a04baabb78b8b9e9f1feac42766f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a6fb6a04baabb78b8b9e9f1feac42766f">getPath</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *iNode)</td></tr>
+<tr class="memdesc:a6fb6a04baabb78b8b9e9f1feac42766f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an absolute path of the i-node given as a parameter.  <a href="class_disk.html#a6fb6a04baabb78b8b9e9f1feac42766f">More...</a><br /></td></tr>
 <tr class="separator:a6fb6a04baabb78b8b9e9f1feac42766f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab76f0b6a2d13f49e0277706d14a89b33"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#ab76f0b6a2d13f49e0277706d14a89b33">getPathFromSLink</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *iNode)</td></tr>
+<tr class="memdesc:ab76f0b6a2d13f49e0277706d14a89b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the content of the slink given as a parameter (path to the file the slink points at)  <a href="class_disk.html#ab76f0b6a2d13f49e0277706d14a89b33">More...</a><br /></td></tr>
 <tr class="separator:ab76f0b6a2d13f49e0277706d14a89b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -505,6 +514,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Adds the i-node given as a parameter to the particulat directory. </p>
+<p>This method is used when adding a new file/folder into the directory given as a parameter.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">directoryItems</td><td>directory items of the target directory </td></tr>
+    <tr><td class="paramname">directoryINode</td><td>i-node of the target directory </td></tr>
+    <tr><td class="paramname">newINode</td><td>i-node (file/folder) we are going to add into the directory </td></tr>
+    <tr><td class="paramname">name</td><td>of the (file/folder) we are going to add into the directory </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a513d6f1e6e4316ff6f8d013dcd05ad8e"></a>
@@ -603,6 +624,17 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Attach clusters containing a content of a file to the i-node given as a parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iNode</td><td>i-node we want to attach the clusters to </td></tr>
+    <tr><td class="paramname">clusters</td><td>all the clusters we want to attach to the i-node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false, if there is not enough free clusters in the file system. Otherwise, true. <br  />
+ </dd></dl>
 
 </div>
 </div>
@@ -785,6 +817,16 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Finds out whether or not there is a file/folder in the directory given as a parameter with particular the name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">directoryItems</td><td>directory items </td></tr>
+    <tr><td class="paramname">name</td><td>name that we want to find out whether or not is already in the folder </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true, if the name exists withing the folder. Otherwise, false. </dd></dl>
+
 </div>
 </div>
 <a id="ae82683a2f78a09a7a10fdaeef1055903"></a>
@@ -837,6 +879,16 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns all the clusters of the i-node given as a parameter. </p>
+<p>This method is used when printing out/exporting a file located in the virtual file system. It returns all the clusters that the content of the file is stored in.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iNode</td><td>i-node of the file we want to get all clusters of </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector of all the clusters of the i-node </dd></dl>
 
 </div>
 </div>
@@ -989,6 +1041,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns an i-node from the path given as a parameter. </p>
+<p>The user can type either a relative or absolute path leading to the target i-node.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iNode</td><td>current location (directory) </td></tr>
+    <tr><td class="paramname">path</td><td>the user typed down as they want to get to the targer file/folder </td></tr>
+    <tr><td class="paramname">relative</td><td>whether it is a relative or absolute path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>target i-node if found. Otherwise, NULL. </dd></dl>
+
 </div>
 </div>
 <a id="aa6e6b112a734a54338ad80911e3ead6e"></a>
@@ -1079,6 +1143,16 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns an absolute path of the i-node given as a parameter. </p>
+<p>This path always starts from the root directory. Therefore, the format looks like '/Data/Monday/'.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iNode</td><td>i-node which we went to know an absolute path of </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>an absolute path of the i-node given as a parameter </dd></dl>
+
 </div>
 </div>
 <a id="ab76f0b6a2d13f49e0277706d14a89b33"></a>
@@ -1104,6 +1178,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the content of the slink given as a parameter (path to the file the slink points at) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iNode</td><td>symbolic link to a file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the content of the symbolic like (an absolute path to a file) </dd></dl>
 
 </div>
 </div>
@@ -1326,6 +1409,16 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Finds out if there is at least n free clusters in te file system. </p>
+<p>This method is used when importing a file into the file system as well as copying a file within the system.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>number of cluster we requite to be store a file/folder </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true, if there is at least n clusters free. Otherwise, false. </dd></dl>
 
 </div>
 </div>
@@ -1976,6 +2069,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Removes the i-node given as a parameter from its parent. </p>
+<p>It means that the i-node will be removed from the directory that it is located in.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iNode</td><td>i-node that is going to be removed from the parent directory </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
