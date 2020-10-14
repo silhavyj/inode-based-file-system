@@ -197,7 +197,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a4237ce73c1348aff7fabd2083b93a051"><td class="memItemLeft" align="right" valign="top">const int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a4237ce73c1348aff7fabd2083b93a051">NULL_POINTER</a> = -1</td></tr>
-<tr class="memdesc:a4237ce73c1348aff7fabd2083b93a051"><td class="mdescLeft">&#160;</td><td class="mdescRight">a 'NULL' pinter used when looking for a free i-node  <a href="class_disk.html#a4237ce73c1348aff7fabd2083b93a051">More...</a><br /></td></tr>
+<tr class="memdesc:a4237ce73c1348aff7fabd2083b93a051"><td class="mdescLeft">&#160;</td><td class="mdescRight">a 'NULL' pointer used when looking for a free cluster  <a href="class_disk.html#a4237ce73c1348aff7fabd2083b93a051">More...</a><br /></td></tr>
 <tr class="separator:a4237ce73c1348aff7fabd2083b93a051"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8a8232622f3f65aa47c55879bc8ae68"><td class="memItemLeft" align="right" valign="top">const int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#ad8a8232622f3f65aa47c55879bc8ae68">ROOT_INODE_ID</a> = 0</td></tr>
 <tr class="memdesc:ad8a8232622f3f65aa47c55879bc8ae68"><td class="mdescLeft">&#160;</td><td class="mdescRight">id of the i-node holding the information about the root directory  <a href="class_disk.html#ad8a8232622f3f65aa47c55879bc8ae68">More...</a><br /></td></tr>
@@ -287,12 +287,16 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:a7031a1de52b8bcacf5b1fe8d4c020ee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits up the string given as a parameter by the separator character.  <a href="class_disk.html#a7031a1de52b8bcacf5b1fe8d4c020ee4">More...</a><br /></td></tr>
 <tr class="separator:a7031a1de52b8bcacf5b1fe8d4c020ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2258fbfc2759e3cd235d808c929d595"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#ae2258fbfc2759e3cd235d808c929d595">getFreeINode</a> ()</td></tr>
+<tr class="memdesc:ae2258fbfc2759e3cd235d808c929d595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a free i-node.  <a href="class_disk.html#ae2258fbfc2759e3cd235d808c929d595">More...</a><br /></td></tr>
 <tr class="separator:ae2258fbfc2759e3cd235d808c929d595"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7efb759b0c007fa03b462036292db97"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#ab7efb759b0c007fa03b462036292db97">getFreeCluster</a> ()</td></tr>
+<tr class="memdesc:ab7efb759b0c007fa03b462036292db97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a free an index of a free cluster.  <a href="class_disk.html#ab7efb759b0c007fa03b462036292db97">More...</a><br /></td></tr>
 <tr class="separator:ab7efb759b0c007fa03b462036292db97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affcca6939a3081c8541e5d810ee0702b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#affcca6939a3081c8541e5d810ee0702b">initializeRootINode</a> ()</td></tr>
+<tr class="memdesc:affcca6939a3081c8541e5d810ee0702b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new root directory.  <a href="class_disk.html#affcca6939a3081c8541e5d810ee0702b">More...</a><br /></td></tr>
 <tr class="separator:affcca6939a3081c8541e5d810ee0702b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29982df2324fa6cec330119943beb514"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a29982df2324fa6cec330119943beb514">addDirectClustersToINode</a> (<a class="el" href="struct_disk_1_1_i_node__t.html">INode_t</a> *iNode)</td></tr>
+<tr class="memdesc:a29982df2324fa6cec330119943beb514"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignes direct clusters to an i-node.  <a href="class_disk.html#a29982df2324fa6cec330119943beb514">More...</a><br /></td></tr>
 <tr class="separator:a29982df2324fa6cec330119943beb514"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28e026829b8f2bec515f2f738719382c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_disk.html#a28e026829b8f2bec515f2f738719382c">isThereAtLeastNFreeClusters</a> (int32_t n)</td></tr>
 <tr class="separator:a28e026829b8f2bec515f2f738719382c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -443,6 +447,15 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Assignes direct clusters to an i-node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iNode</td><td>i-node we want to assign direct clusters to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if everything goes well. False, if there is not enough clusters in the file system </dd></dl>
 
 </div>
 </div>
@@ -901,6 +914,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns a free an index of a free cluster. </p>
+<p>This method is widely used when importing a new file into the virtual file system, as well as when copying a file into a different directory.</p>
+<dl class="section return"><dt>Returns</dt><dd>an index of a free cluster. If there are no free clusters in the file system, it will return <a class="el" href="class_disk.html#a4237ce73c1348aff7fabd2083b93a051" title="a &#39;NULL&#39; pointer used when looking for a free cluster">NULL_POINTER</a> </dd></dl>
+
 </div>
 </div>
 <a id="ae2258fbfc2759e3cd235d808c929d595"></a>
@@ -925,6 +942,10 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns a free i-node. </p>
+<p>This method is used when creating a new file/folder or when a file is being moved to a different directory.</p>
+<dl class="section return"><dt>Returns</dt><dd>a reference to a free i-node. If all the i-nodes are occupied at the moment, it will return NULL </dd></dl>
 
 </div>
 </div>
@@ -1180,6 +1201,9 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Initializes a new root directory. </p>
+<p>This method is used when the user formats the file system with a new size and all the data structures need to be re-initialized. </p>
 
 </div>
 </div>
@@ -2175,7 +2199,7 @@ Private Attributes</h2></td></tr>
 <p>This method is used to split a string into individual tokens when analyzing a path to a target file/folder ('/data/doc.png').</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>sting we want to split up </td></tr>
+    <tr><td class="paramname">str</td><td>string we want to split up </td></tr>
     <tr><td class="paramname">separator</td><td>character by which we want to split the string up </td></tr>
   </table>
   </dd>
@@ -2413,7 +2437,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>a 'NULL' pinter used when looking for a free i-node </p>
+<p>a 'NULL' pointer used when looking for a free cluster </p>
 
 </div>
 </div>

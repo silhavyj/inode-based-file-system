@@ -28,7 +28,7 @@ public:
     /// a KB unit (1e3 bytes) used when formatting the disk
     static const std::string KB;
 
-    /// a 'NULL' pinter used when looking for a free i-node
+    /// a 'NULL' pointer used when looking for a free cluster
     const int32_t NULL_POINTER = -1;
     /// id of the i-node holding the information about the root directory
     const int32_t ROOT_INODE_ID = 0;
@@ -409,10 +409,39 @@ private:
     /// \return a vector of split up tokens
     std::vector<std::string> split(const std::string& str, char separator);
 
+    /// Returns a free i-node
+    ///
+    /// This method is used when creating a new file/folder
+    /// or when a file is being moved to a different directory.
+    ///
+    /// \return a reference to a free i-node. If all the i-nodes are
+    /// occupied at the moment, it will return NULL
     INode_t *getFreeINode();
+
+
+    /// Returns a free an index of a free cluster
+    ///
+    /// This method is widely used when importing a new file into
+    /// the virtual file system, as well as when copying a file into
+    /// a different directory.
+    ///
+    /// \return an index of a free cluster. If there are no free clusters
+    /// in the file system, it will return #NULL_POINTER
     int32_t getFreeCluster();
+
+    /// Initializes a new root directory
+    ///
+    /// This method is used when the user formats the file system
+    /// with a new size and all the data structures need to be re-initialized.
     void initializeRootINode();
+
+    /// Assignes direct clusters to an i-node.
+    ///
+    /// \param iNode i-node we want to assign direct clusters to
+    /// \return true if everything goes well. False, if there is not enough
+    /// clusters in the file system
     bool addDirectClustersToINode(INode_t *iNode);
+
     bool isThereAtLeastNFreeClusters(int32_t n);
     bool existsInDirectory(DirectoryItems_t *directoryItems, std::string name);
     void addINodeToDirectory(DirectoryItems_t *directoryItems, INode_t *directoryINode, INode_t *newINode, std::string name);
