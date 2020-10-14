@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['savebitmapondisk_143',['saveBitmapOnDisk',['../class_disk.html#a7359088824a8ae30be14c213b318c544',1,'Disk']]],
+  ['savedirectoryitemsondisk_144',['saveDirectoryItemsOnDisk',['../class_disk.html#a51fb150a7d7251913b2e69e6c0fdd6da',1,'Disk']]],
+  ['savefilesystemondisk_145',['saveFileSystemOnDisk',['../class_disk.html#a09a896a5f22291c2c5a232942426f45c',1,'Disk']]],
+  ['saveinodesondisk_146',['saveINodesOnDisk',['../class_disk.html#a46c38f0cf61811e1e9d84cd404cc2449',1,'Disk']]],
+  ['saverootdirectoryondisk_147',['saveRootDirectoryOnDisk',['../class_disk.html#a224255783622e4d36544e73c2eaa3e72',1,'Disk']]],
+  ['savesuperblokondisk_148',['saveSuperblokOnDisk',['../class_disk.html#a18f079ad0b5c6571d348d2801c3a8c3f',1,'Disk']]],
+  ['setup_2eh_149',['Setup.h',['../_setup_8h.html',1,'']]],
+  ['shell_150',['Shell',['../class_shell.html',1,'Shell'],['../class_shell.html#aafce354233a1935050d337ff2d70e506',1,'Shell::Shell()']]],
+  ['shell_2ecpp_151',['Shell.cpp',['../_shell_8cpp.html',1,'']]],
+  ['shell_2eh_152',['Shell.h',['../_shell_8h.html',1,'']]],
+  ['shortcut_153',['shortcut',['../struct_shell_1_1_commands.html#acb6192e44631dc542df01c8c9709a494',1,'Shell::Commands']]],
+  ['signature_154',['signature',['../struct_disk_1_1_super_block__t.html#a352a3c3a021487e0ae800a30de8144e9',1,'Disk::SuperBlock_t::signature()'],['../_setup_8h.html#ae72ce63657183560f1b11dbce5a0a5f6',1,'SIGNATURE():&#160;Setup.h']]],
+  ['signature_5flen_155',['SIGNATURE_LEN',['../_setup_8h.html#a7a79662481c373b09143d95d11833fc2',1,'Setup.h']]],
+  ['size_156',['size',['../struct_disk_1_1_i_node__t.html#a0f473ecd2cb6a49278e08b66ddde53bd',1,'Disk::INode_t']]],
+  ['slink_157',['SLINK',['../class_shell.html#a3626608a7d09b8d43972f20e9d05e9bcade2c2665e585b29930ad83ea7d43f3b8',1,'Shell::SLINK()'],['../class_file_system.html#ac5b2f519726dc09f24bcbe08be0f59c2',1,'FileSystem::slink()']]],
+  ['split_158',['split',['../class_disk.html#a7031a1de52b8bcacf5b1fe8d4c020ee4',1,'Disk::split()'],['../class_shell.html#a42e275abec10e51added90c07327acad',1,'Shell::split()']]],
+  ['superblock_159',['superBlock',['../class_disk.html#a5478d369afaf4c7180f5cab0fc62a586',1,'Disk']]],
+  ['superblock_5ft_160',['SuperBlock_t',['../struct_disk_1_1_super_block__t.html',1,'Disk']]]
+];
