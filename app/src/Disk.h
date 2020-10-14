@@ -241,10 +241,52 @@ public:
     /// \param fileName the name of the file in the virtual file system
     void incpyFile(INode_t *destinationINode, FILE *sourceFile, std::string fileName);
 
+    /// Exports the file given as a paramter (i-node) from the virtual file system onto the HDD
+    ///
+    /// First, it collects all the clusters the file content is stored in and then,
+    /// it will copy the content out into the destination file on the HDD.
+    ///
+    /// \param sourceINode i-node of the source file within the file system
+    /// \param destinationFile the file desctiptor of the destination file on the HDD
     void outcpyFile(INode_t *sourceINode, FILE *destinationFile);
+
+    /// Copies the file give as a parameter (i-node) to a different directory
+    ///
+    /// It does not have to be necessary a different directory if the name if the file differs.
+    /// If the user tries to copy the file into the same directory with the same name as 
+    /// the original file, an error message will be thrown.
+    ///
+    /// \param fileINode i-node of the source file (that is going to be copied)
+    /// \param destinationINode i-node of the destination directory
+    /// \param fileName name of copied copied file
     void copyFileToADifferentDirectory(INode_t *fileINode, INode_t *destinationINode, std::string fileName);
+
+    /// Moves the file given as a parameter to a different directory.
+    ///
+    /// This method can be also used for renaming files within the same directory.
+    ///
+    /// \param fileINode i-node of the source file (that is going to be moved)
+    /// \param destinationINode i-node of the destination directory the file is being moved into
+    /// \param fileName name of the moved file
     void moveFileToADifferentDir(INode_t *fileINode, INode_t *destinationINode, std::string fileName);
+
+    /// Prints out all information about the i-node given as a parameter
+    ///
+    /// It prints out all the information such as id, parent's id, number of clusters
+    /// the i-node hold pointer to, size, whether it's a directory or a file, and so on.
+    ///
+    /// \param iNode i-node we want to print out info about
     void printInfoAboutINode(INode_t *iNode);
+
+    /// Creates a symbolic link pointing at the file given as a parameter.
+    ///
+    /// The symbolic link is another i-node holding a path the the original
+    /// file and is treated accordingly. For example, if the user runs command
+    /// cat, it will print out the content of the original file. The same approach
+    /// is used when exporting the file onto the HDD.
+    ///
+    /// \param fileINode i-node of the source file we want to create a symbolic link to
+    /// \param slinkName name of the symbolic link that is being created
     void createSymbolicLink(INode_t *fileINode, std::string slinkName);
 
 private:
