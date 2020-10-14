@@ -162,8 +162,20 @@ public:
     INode_t *getINodeFromPath(std::string path);
 
 
+    /// Removes a file from the file system. 
+    /// 
+    /// This method deletes the file (i-node) given as a parameter.
+    ///
+    /// \param iNode file that is going to be deleted
     void removeFile(INode_t *iNode);
+
+    /// Creates a new folder in the directory (path) given as a parameter.
+    ///
+    /// \param destinationINode i-node of the destination folder
+    /// \param folderName name of the folder that is going to be created
     void addNewFolder(INode_t *destinationINode, std::string folderName);
+
+    
     void addNewFolder(std::string folderName);
     void removeDirectory(INode_t *iNode);
     void cd(std::string path);
