@@ -11,13 +11,16 @@ Disk::Disk(std::string diskFileName) {
     if (access(this->diskFileName.c_str(), F_OK) == -1)
         format(DISK_SIZE);
     else loadFileSystemFromDisk();
-    //printFileSystem();
+
+    // if the user wants to print out the file system
+    // the next line should be enabled
+    // printFileSystem();
 }
 
 std::string Disk::normalizeName(std::string name) {
     if (name.length() > (FILE_NAME_LEN - 1)) {
         name = name.substr(name.length() - FILE_NAME_LEN + 1,  name.length());
-        name += '\0';
+        name += '\0'; //last character of the string '\0'
     }
     return name;
 }
@@ -34,6 +37,9 @@ Disk::~Disk() {
 void Disk::format(size_t diskSize) {
     LOG_INFO("Formatting disk");
     USER_ALERT("FORMATTING DISK (" + std::to_string(diskSize) + "B)");
+
+    // check if the size is big enough to
+    // at least store the superblock & the inodes
     if (diskSize < (sizeof(SuperBlock_t) + sizeof(iNodes))) {
         USER_ALERT("CANNOT CREATE FILE");
         LOG_ERR("The size of the disk is too small");
@@ -47,6 +53,7 @@ void Disk::initNewFileSystem(size_t diskSize) {
     LOG_INFO("Creating a new file system");
     CLUSTER_COUNT = (diskSize - sizeof(SuperBlock_t) - sizeof(iNodes)) / (sizeof(bool) + CLUSTER_SIZE);
 
+    // create an empty file of size of diskSize
     diskFile = fopen(this->diskFileName.c_str(), "wb");
     ftruncate(fileno(diskFile), diskSize);
     rewind(diskFile);
@@ -169,7 +176,6 @@ void Disk::printFileSystem() {
 }
 
 std::string Disk::getCurrentPath() {
-    //return currentPath;
     return getPath(currentINode);
 }
 
@@ -180,6 +186,7 @@ void Disk::printCurrentDirectoryItems() {
 }
 
 void Disk::printDirectoryItems(const DirectoryItems_t *directoryItems) {
+    // formated output aligned from left
     std::cout << std::left << std::setw(10) << std::setfill(' ') << "size(B)";
     std::cout << std::left << std::setw(7) << std::setfill(' ') << "inode";
     std::cout << std::left << std::setw(8) << std::setfill(' ') << "p-inode\n";
@@ -189,13 +196,18 @@ void Disk::printDirectoryItems(const DirectoryItems_t *directoryItems) {
 
 void Disk::printDirectoryItem(const DirectoryItem_t *directoryItem) {
     INode_t *iNode = &iNodes[directoryItem->iNode];
+
+    // formated output aligned from left
     std::cout << std::left << std::setw(10) << std::setfill(' ') << std::to_string(iNode->size);
     std::cout << std::left << std::setw(7) << std::setfill(' ') << iNode->nodeId;
     std::cout << std::left << std::setw(8) << std::setfill(' ') << iNode->parentId;
     if (iNode->isDirectory)
+        // if it's a directory
         std::cout << "[+] " << directoryItem->itemName;
     else {
+        // if it's a file
         std::cout << "[-] " << directoryItem->itemName;
+        // if it's a symbolic link
         if (iNode->isSymbolicLink == true) {
             std::cout << " -> ";
             printFileContent(iNode, false);
@@ -298,7 +310,7 @@ bool Disk::addDirectClustersToINode(INode_t *iNode) {
 
 Disk::DirectoryItems_t::DirectoryItems_t(int32_t iNodeId, int32_t iNodeParentId) {
     LOG_INFO("Creating an empty directory items");
-    count = 2;
+    count = 2; // partent + the directory itself
     items = new DirectoryItem_t[count];
     strcpy(items[0].itemName, ".");
     strcpy(items[1].itemName, "..");
@@ -316,11 +328,14 @@ int32_t Disk::dataOffset(int32_t index) const {
 }
 
 int32_t Disk::getNumberOfClustersNeeded(int32_t size) const {
-    if (size == 0)
+    if (size <= 0)
         return 0;
     if (size < superBlock->clusterSize)
         return 1;
     int32_t numberOfClusters = size / superBlock->clusterSize;
+
+    // if it doesn't fit exactly into the clusters
+    // one more cluster is needed (the rest of it)
     if (size % superBlock->clusterSize != 0)
         numberOfClusters++;
     return numberOfClusters;
@@ -372,7 +387,7 @@ void Disk::saveDirectoryItemsOnDisk(INode_t *iNode, DirectoryItems_t *directoryI
 Disk::DirectoryItems_t * Disk::getDirectoryItemsFromINode(INode_t *iNode) {
     LOG_INFO("Loading directory items from the i-node");
     if (iNode == NULL) {
-        LOG_ERR("the i-node is NULL");
+        LOG_ERR("The i-node is NULL");
         return NULL;
     }
 
