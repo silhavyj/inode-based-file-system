@@ -28,7 +28,11 @@ void FileSystem::mkdir(std::string path) {
     if (path.find('/') != std::string::npos) {
         name = path.substr(pos + 1, path.length());
         name = disk->normalizeName(name);
-        Disk::INode_t *folderINode = disk->getINodeFromPath(path.substr(0, pos));
+        path = path.substr(0, pos);
+        if (path == "")
+            path = "/";
+        
+        Disk::INode_t *folderINode = disk->getINodeFromPath(path);
         disk->addNewFolder(folderINode, name);
     }
     else {
@@ -83,6 +87,9 @@ void FileSystem::incpy(std::string source, std::string destination) {
     fileName = disk->normalizeName(fileName);
     std::string destinationPath = getDestinationDirectoryPath(destination);
 
+    if (destinationPath == "")
+        destinationPath = "/";
+
     // open the source file stored on the HDD as a binary file
     FILE *file = fopen(source.c_str(), "rb+");
     Disk::INode_t *destinationINode = disk->getINodeFromPath(destinationPath);
@@ -120,6 +127,9 @@ void FileSystem::cp(std::string source, std::string destination) {
     std::string destinationPath = getDestinationDirectoryPath(destination);
     fileName = disk->normalizeName(fileName);
 
+    if (destinationPath == "")
+        destinationPath = "/";
+
     Disk::INode_t *sourceINode = disk->getINodeFromPath(source);
     Disk::INode_t *destinationINode = disk->getINodeFromPath(destinationPath);
     disk->copyFileToADifferentDirectory(sourceINode, destinationINode, fileName);
@@ -130,6 +140,9 @@ void FileSystem::mv(std::string source, std::string destination) {
     std::string fileName = getDestinationFileName(source, destination);
     std::string destinationPath = getDestinationDirectoryPath(destination);
     fileName = disk->normalizeName(fileName);
+
+    if (destinationPath == "")
+        destinationPath = "/";
 
     Disk::INode_t *sourceINode = disk->getINodeFromPath(source);
     Disk::INode_t *destinationINode = disk->getINodeFromPath(destinationPath);
@@ -149,6 +162,7 @@ std::string FileSystem::getDestinationFileName(std::string source, std::string d
         return destination;
     if (pos == destination.length() - 1)
         return getSourceFileName(source);
+
     Disk::INode_t *destinationINode = disk->getINodeFromPath(destination);
     if (destinationINode == NULL)
         return destination.substr(pos + 1, destination.length());
@@ -165,7 +179,7 @@ std::string FileSystem::getDestinationDirectoryPath(std::string destination) {
     if (pos == destination.length() - 1)
         return destination;
     Disk::INode_t *destinationINode = disk->getINodeFromPath(destination);
-    if (destinationINode == NULL || destinationINode->isDirectory == false)
+    if (destinationINode == NULL || destinationINode->isDirectory == false) 
         return destination.substr(0, pos);
     return destination;
 }
