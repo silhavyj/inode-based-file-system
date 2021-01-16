@@ -25,8 +25,8 @@ rm /cp/wtf.gif/wtf.gif
 outcp /memes/meme.png output/meme.png
 outcp /files/zero output/zero
 outcp /files/random output/random
-outcp /videa/vid1.wbm /output/vid1.wbm
-outcp /videa/vid2.wbm /output/vid2.wbm
+outcp /videa/vid1.wbm output/vid1.wbm
+outcp /videa/vid2.wbm output/vid2.wbm
 outcp /CP/poem.jpg output/poem.jpg
 outcp /CP/test.txt output/test.txt
 outcp /CP/WTF.gif output/wtf.gif
