@@ -318,6 +318,7 @@ bool validFORMAT(const std::vector<std::string>& tokens) {
             return false;
         try {
             size_t size = std::stoi(tokens[1]);
+            UNUSED(size);
             return true;
         }
         catch (std::invalid_argument& e){
