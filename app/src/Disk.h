@@ -13,6 +13,8 @@
 #include "Setup.h"
 #include "Logger.h"
 
+#define UNUSED(x) (void)(x)
+
 /// \author A127B0362P silhavyj
 ///
 /// This class represents a physical disk of the virtual
