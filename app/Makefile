@@ -13,5 +13,6 @@ $(BIN)/%.o : $(SRC)/%.cpp
 	@mkdir -p $(BIN)
 	$(CCX) $(FLAGS) -c $< -o $@
 
+.PHONY clean:
 clean:
 	rm -r $(BIN) $(TARGET)
